@@ -1,6 +1,8 @@
+import config from '../config';
+
 const processCryptoRequest = async (text, algorithm, operation, key) => {
   try {
-    const response = await fetch('http://localhost:3001/api/crypto', {
+    const response = await fetch(`${config.apiUrl}/crypto`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
