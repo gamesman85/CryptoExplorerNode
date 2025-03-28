@@ -7,6 +7,15 @@ const cryptoRoutes = require('./src/routes/cryptoRoutes');
 app.use(cors());
 app.use(express.json());
 
+// Root route
+app.get('/', (req, res) => {
+  res.status(200).json({ 
+    message: 'Crypto Explorer Backend',
+    status: 'active',
+    endpoints: ['/api/crypto', '/health']
+  });
+});
+
 // Routes
 app.use('/api', cryptoRoutes);
 
