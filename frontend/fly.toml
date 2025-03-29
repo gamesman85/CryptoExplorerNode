@@ -1,21 +1,20 @@
-# fly.toml app configuration file generated for crypto-explorer-backend on 2025-03-29T12:16:26+01:00
+# fly.toml app configuration file generated for crypto-explorer on 2025-03-29T12:30:58+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'crypto-explorer-backend'
+app = 'crypto-explorer'
 primary_region = 'arn'
 
 [build]
   dockerfile = 'Dockerfile'
 
 [http_service]
-  internal_port = 3001
+  internal_port = 8080
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
-  processes = ['app']
 
 [[vm]]
   memory = '1gb'
